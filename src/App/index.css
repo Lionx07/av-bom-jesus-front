@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* O Tailwind já faz o box-sizing e o reset de margem por padrão */
+
+:root {
+  font-family: "Poppins", system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ffffff;
+}
+
+/* Remova o seletor * { margin: 0 } manual */
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+/* Se quiser estilizar botões globais sem quebrar o Tailwind, 
+   é melhor usar classes ou @layer base */
+button:not(.p-button) { 
+  /* Estilo apenas para botões que NÃO são do PrimeReact */
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 0.8em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #545871;
+  color: white;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  background-color: #323547;;
+}
+button:focus,
+button:focus-visible {
+}
+
+button.p-button.p-button-secondary,
+.p-button.p-button-secondary,
+button.secondary,
+.btn-secondary {
+  background-color: transparent;
+  color: #545871;              /* gray-700 */
+  border: 1px solid #d1d5db;   /* gray-300 */
+  padding: 0.5rem 0.875rem;
+  border-radius: 8px;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+
+/* outlined variant (caso use p-button-outlined) */
+button.p-button.p-button-secondary.p-button-outlined,
+.p-button.p-button-secondary.p-button-outlined {
+  background-color: transparent;
+}
+
+/* hover / focus */
+button.p-button.p-button-secondary:hover,
+.p-button.p-button-secondary:hover,
+button.secondary:hover,
+.btn-secondary:hover {
+  background-color: #f3f4f6;   /* gray-100 */
+  color: #111827;              /* gray-900 */
+}
+
+.p-button.p-button-danger.p-button-text {
+  color: #74313f !important; /* A cor que você definiu */
+  background-color: transparent !important;
+}
+
+/* Efeito de Hover para o botão de lixeira */
+.p-button.p-button-danger.p-button-text:hover {
+  color: #a52a2a !important;
+}
+
+/* Se quiser que o ícone acompanhe o tamanho pequeno */
+.p-button.p-button-sm .p-button-icon {
+  font-size: 0.875rem;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

@@ -1,0 +1,37 @@
+/* regras específicas para sobrescrever o tema do PrimeReact */
+.professor-table,
+.professor-table .p-datatable,
+.professor-table .p-datatable-wrapper,
+.professor-table .p-datatable table {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.professor-table .p-datatable-thead > tr > th,
+.professor-table .p-datatable-tbody > tr > td {
+  background-color: transparent !important;
+}
+
+/* remover listras / alternância de cores */
+.professor-table .p-datatable-tbody > tr:nth-child(odd) td,
+.professor-table .p-datatable-tbody > tr:nth-child(even) td {
+  background-color: transparent !important;
+}
+
+/* ajustar destaque de linha selecionada/hover se quiser sem quebrar contraste */
+.professor-table .p-datatable-tbody > tr.p-highlight,
+.professor-table .p-datatable-tbody > tr:hover {
+  background-color: rgba(255,255,255,0.03) !important; /* ajuste ou use transparent */
+}
+
+.professor-table .p-datatable-thead > tr > th,
+.professor-table .p-datatable-tbody > tr > td {
+    padding: 1rem 0.75rem; /* O primeiro valor é o padding vertical (top/bottom) */
+}
+
+.professor-table .p-datatable-header {
+    padding: 1rem !important; /* Aumenta a altura interna */
+    border-bottom: none !important; /* Remove a linha chata que divide o título da tabela */
+    margin-bottom: 10px; /* Cria o espaço que você queria */
+}

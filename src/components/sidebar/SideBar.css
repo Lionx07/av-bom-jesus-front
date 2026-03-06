@@ -1,0 +1,136 @@
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background-color: #3e404d;
+  color: white;
+  padding: 13px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transition: width 200ms ease;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.sidebar.collapsed {
+  width: 64px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.logo-icon {
+  font-size: 20px;
+}
+
+.logo-text {
+  font-weight: 600;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.sidebar.collapsed .logo-text {
+  opacity: 0;
+  transform: translateX(-6px);
+  pointer-events: none;
+}
+
+/* toggle button */
+.toggle-btn {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 6px;
+}
+.toggle-btn:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+/* menu */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #e6eef8;
+  transition: background 120ms ease;
+  overflow: hidden;
+}
+
+.menu-item:hover {
+  background-color: #334155;
+  color: inherit;
+}
+
+.menu-item .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  color: #cbd5e1;
+}
+
+/* label behavior */
+.menu-item .label {
+  white-space: nowrap;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.sidebar.collapsed .menu-item {
+  justify-content: center;
+}
+
+.sidebar.collapsed .menu-item .label {
+  opacity: 0;
+  transform: translateX(-6px);
+  width: 0;
+  pointer-events: none;
+}
+
+/* small tweak for tooltips on collapsed state */
+.menu-item[title] {
+  position: relative;
+}
+
+/* optional: responsive */
+@media (max-width: 640px) {
+  .sidebar { transform: translateX(0); position: fixed; }
+}
+
+/* ensure main content is not hidden under the fixed sidebar
+   works by using the adjacent sibling selector: <aside class="sidebar" /> + main */
+.sidebar + main {
+  margin-left: 220px; /* same as .sidebar width */
+  transition: margin-left 200ms ease;
+  box-sizing: border-box;
+}
+
+.sidebar.collapsed + main {
+  margin-left: 68px; /* same as collapsed width */
+}

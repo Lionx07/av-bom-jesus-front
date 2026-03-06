@@ -1,0 +1,9 @@
+.p-button.p-button-danger.p-button-text {
+  color: #74313f !important; /* A cor que você definiu */
+  background-color: transparent !important;
+}
+
+/* Efeito de Hover para o botão de lixeira */
+.p-button.p-button-danger.p-button-text:hover {
+  color: #a52a2a !important;
+}
