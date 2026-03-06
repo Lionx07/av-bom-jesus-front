@@ -166,6 +166,7 @@ export function StudentEdit() {
           <InputText 
             value={student.name || ''} 
             onChange={(e) => handleInputChange("name", e.target.value)} 
+            placeholder="Nome completo"
           />
         </div>
         <div className="flex flex-col gap-1">
@@ -173,6 +174,7 @@ export function StudentEdit() {
           <InputText 
             value={student.studentNumber || ''} 
             onChange={(e) => handleInputChange("studentNumber", e.target.value)} 
+            placeholder="Ex: 2023001"
           />
         </div>
         <div className="flex flex-col gap-1">
@@ -180,6 +182,7 @@ export function StudentEdit() {
           <InputText 
             value={student.phoneNumber || ''} 
             onChange={(e) => handleInputChange("phoneNumber", e.target.value)} 
+            placeholder="(00) 00000-0000"
           />
         </div>
         <div className="flex flex-col gap-1">
@@ -187,6 +190,7 @@ export function StudentEdit() {
           <InputText 
             value={student.emailAddress || ''} 
             onChange={(e) => handleInputChange("emailAddress", e.target.value)} 
+            placeholder="email@exemplo.com"
           />
         </div>
       </div>

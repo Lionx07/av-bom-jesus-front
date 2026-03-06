@@ -131,15 +131,16 @@ export function ProfessorEdit() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <div className="flex flex-col gap-1">
           <label className="text-sm font-medium">Nome</label>
-          <InputText value={professor.name || ''} onChange={(e) => handleInputChange("name", e.target.value)} />
+          <InputText value={professor.name || ''} onChange={(e) => handleInputChange("name", e.target.value)} placeholder="Nome completo" />
+          
         </div>
         <div className="flex flex-col gap-1">
           <label className="text-sm font-medium">Telefone</label>
-          <InputText value={professor.phoneNumber || ''} onChange={(e) => handleInputChange("phoneNumber", e.target.value)} />
+          <InputText value={professor.phoneNumber || ''} onChange={(e) => handleInputChange("phoneNumber", e.target.value)} placeholder="(00) 00000-0000" />
         </div>
         <div className="flex flex-col gap-1">
           <label className="text-sm font-medium">Email</label>
-          <InputText value={professor.emailAddress || ''} onChange={(e) => handleInputChange("emailAddress", e.target.value)} />
+          <InputText value={professor.emailAddress || ''} onChange={(e) => handleInputChange("emailAddress", e.target.value)} placeholder="email@exemplo.com" />
         </div>
         <div className="flex flex-col gap-1">
           <label className="text-sm font-medium">Salário</label>

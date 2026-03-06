@@ -96,6 +96,7 @@ export function ProfessorCreate() {
             id="name"
             value={professor.name}
             onChange={(e) => handleInputChange("name", e.target.value)}
+            placeholder="Nome completo"
           />
         </div>
         <div className="flex flex-col">
@@ -104,6 +105,7 @@ export function ProfessorCreate() {
             id="phoneNumber"
             value={professor.phoneNumber}
             onChange={(e) => handleInputChange("phoneNumber", e.target.value)}
+            placeholder="(00) 00000-0000"
           />
         </div>
         <div className="flex flex-col">
@@ -112,6 +114,7 @@ export function ProfessorCreate() {
             id="email"
             value={professor.emailAddress}
             onChange={(e) => handleInputChange("emailAddress", e.target.value)}
+            placeholder="email@exemplo.com"
           />
         </div>
         <div className="flex flex-col">
