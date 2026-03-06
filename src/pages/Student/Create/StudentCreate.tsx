@@ -46,7 +46,7 @@ export function StudentCreate() {
 
     formData.append("person", JSON.stringify(student));
 
-    const response = await api.post<StudentDTOResponse>('/person/with-file', formData, {
+    await api.post<StudentDTOResponse>('/person/with-file', formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
