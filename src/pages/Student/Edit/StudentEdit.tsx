@@ -134,7 +134,7 @@ export function StudentEdit() {
         <span className="text-xl font-bold text-900">Editar Aluno</span>
         <div className="flex gap-2">
           <Button label="Cancelar" onClick={() => navigate("/student")} severity="secondary" text />
-          <Button label="Deletar" icon="pi pi-trash" severity="danger" outlined onClick={deleteStudent} />
+          <Button label="Deletar" icon="pi pi-trash" severity="secondary" outlined onClick={deleteStudent} />
           <Button label="Salvar Alterações" icon="pi pi-check" severity="success" disabled={!validateForm()} onClick={updateStudent} />
         </div>
       </div>
